@@ -1,0 +1,5 @@
+/data/preprocess_policy
+/data/preprocess_D
+
+*.pyc
+*.gif
