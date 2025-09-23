@@ -1,5 +1,9 @@
 # Equilibrium Policy Generalization: A Reinforcement Learning Framework for Cross-Graph Zero-Shot Generalization in Pursuit-Evasion Games
 
+This repository contains an implementation of Equilibrium Policy Generalization (EPG) proposed in our paper [1] at NeurIPS 2025. Four no-exit scenarios (2vs1-pursuer, 2vs1-evader, 6vs1-pursuer, 6vs1-evader) and one multi-exit scenario (5vs1-pursuer) are considered in our implementation. If you have any questions, please contact lurunyu17@mails.ucas.ac.cn.
+
+[1] Runyu Lu, Peng Zhang, Ruochuan Shi, Yuanheng Zhu, Dongbin Zhao, Yang Liu, Dong Wang, and Cesare Alippi. Equilibrium policy generalization: A reinforcement learning framework for cross-graph zero-shot generalization in pursuit-evasion games. In The Thirty-ninth Annual Conference on Neural Information Processing Systems, 2025.
+
 ## Code Environment
 - **Python Version**: 3.10  
 - **CUDA Version**: 12.2
