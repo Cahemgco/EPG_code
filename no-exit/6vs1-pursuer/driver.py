@@ -277,12 +277,12 @@ def main():
                         next_logps = torch.stack(next_logps_list, dim=0)
                         next_logp = torch.zeros_like(next_q_values).to(device)
 
-                        tensor_0 = logps[0, :, :].unsqueeze(2).unsqueeze(3).unsqueeze(4).unsqueeze(5).unsqueeze(6)  # (batch_size, K_SIZE, 1, 1, 1, 1, 1)
-                        tensor_1 = logps[1, :, :].unsqueeze(1).unsqueeze(3).unsqueeze(4).unsqueeze(5).unsqueeze(6)  # (batch_size, 1, K_SIZE, 1, 1, 1, 1)
-                        tensor_2 = logps[2, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(4).unsqueeze(5).unsqueeze(6)  # (batch_size, 1, 1, K_SIZE, 1, 1, 1)
-                        tensor_3 = logps[3, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(3).unsqueeze(5).unsqueeze(6)  # (batch_size, 1, 1, 1, K_SIZE, 1, 1)
-                        tensor_4 = logps[4, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(3).unsqueeze(4).unsqueeze(6)  # (batch_size, 1, 1, 1, 1, K_SIZE, 1)
-                        tensor_5 = logps[5, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(3).unsqueeze(4).unsqueeze(5)  # (batch_size, 1, 1, 1, 1, 1, K_SIZE)
+                        tensor_0 = next_logps[0, :, :].unsqueeze(2).unsqueeze(3).unsqueeze(4).unsqueeze(5).unsqueeze(6)  # (batch_size, K_SIZE, 1, 1, 1, 1, 1)
+                        tensor_1 = next_logps[1, :, :].unsqueeze(1).unsqueeze(3).unsqueeze(4).unsqueeze(5).unsqueeze(6)  # (batch_size, 1, K_SIZE, 1, 1, 1, 1)
+                        tensor_2 = next_logps[2, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(4).unsqueeze(5).unsqueeze(6)  # (batch_size, 1, 1, K_SIZE, 1, 1, 1)
+                        tensor_3 = next_logps[3, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(3).unsqueeze(5).unsqueeze(6)  # (batch_size, 1, 1, 1, K_SIZE, 1, 1)
+                        tensor_4 = next_logps[4, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(3).unsqueeze(4).unsqueeze(6)  # (batch_size, 1, 1, 1, 1, K_SIZE, 1)
+                        tensor_5 = next_logps[5, :, :].unsqueeze(1).unsqueeze(2).unsqueeze(3).unsqueeze(4).unsqueeze(5)  # (batch_size, 1, 1, 1, 1, 1, K_SIZE)
                         
                         result = tensor_0 + tensor_1 + tensor_2 + tensor_3 + tensor_4 + tensor_5
                         next_logp = result.permute(0, 6, 5, 4, 3, 2, 1).reshape(BATCH_SIZE, K_SIZE**N_ROBOTS, -1)  # (batch_size, K_SIZE**N_ROBOTS, 1)
