@@ -1,4 +1,4 @@
-# Equilibrium Policy Generalization (R2PS Implementation Backbone)
+# Equilibrium Policy Generalization (R2PS Backbone)
 
 This repository contains an implementation of Equilibrium Policy Generalization (EPG) proposed in our paper [1] (https://arxiv.org/abs/2511.00811) at NeurIPS 2025. Four no-exit scenarios (2vs1-pursuer/2vs1-evader/6vs1-pursuer/6vs1-evader) and one multi-exit scenario (5vs1-pursuer) are considered in our implementation. A more complete version (with DP implementation and test files) can be found in the Supplementary Material of our paper. Besides, the implementation is also used for worst-case Robust Real-time Strategies (R2PS) in our subsequent paper [2] concerning partial observability at ICLR 2026 (https://arxiv.org/abs/2511.17367). If you have any questions, please feel free to contact Runyu Lu (lurunyu17@mails.ucas.ac.cn).
 
